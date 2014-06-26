@@ -32,7 +32,6 @@ const unsigned int axis1 = 32, axis2 = 32;
 int roll_coin(int a, int b);
 double random_real(int a, int b);
 double energy_tot(array_2d sitespin);
-double mag_tot(array_2d sitespin);
 double nn_energy(array_2d sitespin, unsigned int row, unsigned int col);
 
 int main()
@@ -167,19 +166,6 @@ double energy_tot(array_2d sitespin)
 	return energy;
 }
 
-//function to calculate magnetization
-//for a given spin configuration
-
-double mag_tot(array_2d sitespin)
-{
-	int mag = 0;
-
-	for (unsigned int i = 0; i < axis1; i++)
-		for (unsigned int j = 0; j < axis2; j++)
-			mag += sitespin[i][j];
-
-	return mag;
-}
 
 //Calculating interaction energy change for spin 
 //at random site->(row,col) with its nearest neighbours
